@@ -19,6 +19,8 @@ pc.script.create('minimap', function (context) {
         this.circleLife = 1000;
         
         this.touch = 'ontouchstart' in document.documentElement;
+
+        this.shieldShownLastTime = false;
         
         var css = function() {/*
             #minimap {
@@ -72,7 +74,7 @@ pc.script.create('minimap', function (context) {
             this.teams = context.root.getChildren()[0].script.teams;
 
             this.shieldCountdown = 0;
-            this.shieldShownLastTime = false;
+            //this.shieldShownLastTime = false;
             
             this.level = [
                 [ 13.5, 2, 1, 4 ],
@@ -229,14 +231,14 @@ pc.script.create('minimap', function (context) {
                 ctx.fill();
             }
 
-            if (shieldDisplayed == true && shieldShownLastTime == false) {
+            if (shieldDisplayed == true && this.shieldShownLastTime == false) {
                 // this is a new shield showing... play sound that shield is now avaliable
                 console.log('play shieldspawn');
                 this.entity.audiosource.play("shieldspawn");
-                shieldShownLastTime = true;
+                this.shieldShownLastTime = true;
             } 
             if (shieldDisplayed == false) {
-                shieldShownLastTime = false;
+                this.shieldShownLastTime = false;
             }
             
             // tanks
