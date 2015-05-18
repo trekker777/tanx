@@ -211,7 +211,7 @@ pc.script.create('minimap', function (context) {
                 ctx.beginPath();
                 ctx.rect(pos[0] - size / 2, pos[1] - size / 2, size, size);
                 ctx.fillStyle = this.pickableColors[pickables[i].type] || '#fff';
-                console.log('fillstyle = ' + ctx.fillstyle);
+                console.log('pickables = ' + pickables[i].type);
                 ctx.fill();
             }
             
