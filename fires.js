@@ -1,3 +1,4 @@
+//
 pc.script.create('fires', function (app) {
     var Fires = function (entity) {
         this.entity = entity;
