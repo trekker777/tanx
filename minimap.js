@@ -232,7 +232,7 @@ pc.script.create('minimap', function (context) {
             if (shieldDisplayed == true && shieldShownLastTime == false) {
                 // this is a new shield showing... play sound that shield is now avaliable
                 console.log('play shieldspawn');
-                this.audiosource.play("shieldspawn");
+                this.entity.audiosource.play("shieldspawn");
                 shieldShownLastTime = true;
             } 
             if (shieldDisplayed == false) {
