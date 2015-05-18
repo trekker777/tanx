@@ -212,7 +212,8 @@ pc.script.create('minimap', function (context) {
                 if (! pickables[i].enabled || pickables[i].script.pickable.finished)
                     continue;
                     
-                if (pickables[i].type == shield) {
+                console.log('typeof = ' + typeof(pickables[i].type));
+                if (pickables[i].type === 'shield') {
                     shieldDisplayed = true;
                     console.log('shieldDisplayed = true');
                 }
