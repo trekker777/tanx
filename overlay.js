@@ -30,6 +30,8 @@ pc.script.create('overlay', function (app) {
             ".cinematic-bottom {",
             "   bottom: 0;",
             "}",
+
+
             "#powered {",
             "   position: absolute;",
             "   bottom: 16px;",
@@ -39,6 +41,8 @@ pc.script.create('overlay', function (app) {
             "#powered > img {",
             "   width: 100px;",
             "}",
+
+
             // overlay
             "#overlay {",
             "   position: absolute;",
@@ -82,7 +86,7 @@ pc.script.create('overlay', function (app) {
             "   height: 232px;",
             "   color: #fff;",
             "   opacity: 0;",
-            "   visibility: hidden;",
+            "   visibility: visible;",
             "   transition: opacity 200ms, visibility 200ms;",
             "}",
             "#overlay > .winner.active {",
