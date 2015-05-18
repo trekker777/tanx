@@ -407,15 +407,15 @@ pc.script.create('overlay', function (app) {
         
         var self = this;
         setTimeout(function() {
-            var audio = self.audio = new Audio('https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/tanx/music.mp3');
+/*            var audio = self.audio = new Audio('https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/tanx/music.mp3');
             audio.autoplay = true;
             audio.controls = false;
             audio.loop = true;
             audio.volume = self.volume;
-            audio.play();
+            audio.play();*/
             
             var evtPlay = function() {
-                audio.play();
+                //audio.play();
                 window.removeEventListener('touchstart', evtPlay);
             };
             window.addEventListener('touchstart', evtPlay, false);
