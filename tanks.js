@@ -79,8 +79,8 @@ pc.script.create('tanks', function (context) {
                 tank.setDead(tankData.dead || false);
                 
                 // score
-                if (tank.own && tankData.hasOwnProperty('s'))
-                     this.hpBar.setScore(tankData.s);
+                //if (tank.own && tankData.hasOwnProperty('s'))
+                //     this.hpBar.setScore(tankData.s);
             }
             
             this.minimap.draw();
