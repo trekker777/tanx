@@ -70,6 +70,9 @@ pc.script.create('minimap', function (context) {
             this.pickables = context.root.findByName('pickables');
             this.client = context.root.getChildren()[0].script.client;
             this.teams = context.root.getChildren()[0].script.teams;
+
+            this.shieldCountdown = 0;
+            this.shieldShownLastTime = false;
             
             this.level = [
                 [ 13.5, 2, 1, 4 ],
@@ -198,13 +201,22 @@ pc.script.create('minimap', function (context) {
             ctx.fillStyle = '#5e7578';
             ctx.fill();
 
+
+
             // pickables
+            var shieldDisplayed = false;
+
             var pickables = this.pickables.getChildren();
             size = 3 * (this.size / 3);
             for(i = 0; i < pickables.length; i++) {
                 if (! pickables[i].enabled || pickables[i].script.pickable.finished)
                     continue;
                     
+                if (pickables[i].type == shield) {
+                    shieldDisplayed = true;
+                }
+
+
                 pos = [ pickables[i].getPosition().x, pickables[i].getPosition().z ];
                 pos[0] = pos[0] / 48 * this.canvas.width;
                 pos[1] = pos[1] / 48 * this.canvas.width;
@@ -213,6 +225,15 @@ pc.script.create('minimap', function (context) {
                 ctx.fillStyle = this.pickableColors[pickables[i].type] || '#fff';
                 console.log('pickables = ' + pickables[i].type);
                 ctx.fill();
+            }
+
+            if (shieldDisplayed == true && shieldShownLastTime == false) {
+                // this is a new shield showing... play sound that shield is now avaliable
+                this.audiosource.play("shieldspawn");
+                shieldShownLastTime = true;
+            } 
+            if (shieldDisplayed == false) {
+                shieldShownLastTime = false;
             }
             
             // tanks
