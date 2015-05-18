@@ -211,6 +211,7 @@ pc.script.create('minimap', function (context) {
                 ctx.beginPath();
                 ctx.rect(pos[0] - size / 2, pos[1] - size / 2, size, size);
                 ctx.fillStyle = this.pickableColors[pickables[i].type] || '#fff';
+                console.log('fillstyle = ' + ctx.fillstyle);
                 ctx.fill();
             }
             
@@ -228,8 +229,8 @@ pc.script.create('minimap', function (context) {
                 pos[1] = pos[1] / 48 * this.canvas.width;
                 
                 // dont render if flashit
-                if (! tanks[i].script.tank.flashState)
-                    continue;
+                //if (! tanks[i].script.tank.flashState)
+                //    continue;
                 
                 // render tank
                 ctx.save();
