@@ -214,6 +214,7 @@ pc.script.create('minimap', function (context) {
                     
                 if (pickables[i].type == shield) {
                     shieldDisplayed = true;
+                    console.log('shieldDisplayed = true');
                 }
 
 
@@ -223,12 +224,13 @@ pc.script.create('minimap', function (context) {
                 ctx.beginPath();
                 ctx.rect(pos[0] - size / 2, pos[1] - size / 2, size, size);
                 ctx.fillStyle = this.pickableColors[pickables[i].type] || '#fff';
-                console.log('pickables = ' + pickables[i].type);
+                //console.log('pickables = ' + pickables[i].type);
                 ctx.fill();
             }
 
             if (shieldDisplayed == true && shieldShownLastTime == false) {
                 // this is a new shield showing... play sound that shield is now avaliable
+                console.log('play shieldspawn');
                 this.audiosource.play("shieldspawn");
                 shieldShownLastTime = true;
             } 
