@@ -79,7 +79,13 @@ pc.script.create('minimap', function (context) {
             this.shieldCountdown = 0;
             //this.shieldShownLastTime = false;
         //this.shieldTimer = 0; shieldTimer
-        this.timer = setInterval(function () {console.log('test')}, 1000);
+        this.timer = setInterval(function () {
+            if (shieldCountdown == 0) {}
+                console.log('tick'); 
+            }
+            console.log('shieldCountdown = ' + shieldCountdown); 
+            shieldCountdown--; 
+        }, 1000);
             
             this.level = [
                 [ 13.5, 2, 1, 4 ],
@@ -242,6 +248,10 @@ pc.script.create('minimap', function (context) {
                 ctx.fillStyle = this.pickableColors[pickables[i].type] || '#fff';
                 //console.log('pickables = ' + pickables[i].type);
                 ctx.fill();
+            }
+
+            if (this.shieldShownLastTime == true && this.shieldDisplayed == false) {
+                shieldCountdown = 30;
             }
 
             if (shieldDisplayed == true && this.shieldShownLastTime == false) {
