@@ -59,9 +59,11 @@ pc.script.create('minimap', function (context) {
         document.querySelector('head').appendChild(style);
     };
 
-    var shieldCountdown = 0;
 
     Minimap.prototype = {
+
+        var shieldCountdown = 0;
+
         prepareCanvas: function() {
             var canvas = document.createElement('canvas');
             canvas.id = 'minimap';
