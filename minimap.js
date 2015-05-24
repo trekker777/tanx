@@ -20,8 +20,10 @@ pc.script.create('minimap', function (context) {
         
         this.touch = 'ontouchstart' in document.documentElement;
 
+
         this.shieldShownLastTime = false;
 
+        this.shieldTimer = 0;
         this.timer = setInterval(function () {shieldTimer()}, 1000);
         
         var css = function() {/*
