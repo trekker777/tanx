@@ -1,3 +1,4 @@
+//test
 pc.script.create('minimap', function (context) {
     var Minimap = function (entity) {
         this.entity = entity;
@@ -23,8 +24,6 @@ pc.script.create('minimap', function (context) {
 
         this.shieldShownLastTime = false;
 
-        this.shieldTimer = 0;
-        this.timer = setInterval(function () {shieldTimer()}, 1000);
         
         var css = function() {/*
             #minimap {
@@ -79,6 +78,8 @@ pc.script.create('minimap', function (context) {
 
             this.shieldCountdown = 0;
             //this.shieldShownLastTime = false;
+        //this.shieldTimer = 0;
+        this.timer = setInterval(function () {this.shieldTimer()}, 1000);
             
             this.level = [
                 [ 13.5, 2, 1, 4 ],
