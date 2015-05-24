@@ -80,6 +80,7 @@ pc.script.create('minimap', function (context) {
             //this.shieldShownLastTime = false;
         //this.shieldTimer = 0; shieldTimer
         this.timer = setInterval(function () {
+            
             if (shieldCountdown == 0) {}
                 console.log('tick'); 
             }
