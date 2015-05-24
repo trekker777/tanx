@@ -21,6 +21,8 @@ pc.script.create('minimap', function (context) {
         this.touch = 'ontouchstart' in document.documentElement;
 
         this.shieldShownLastTime = false;
+
+        this.timer = setInterval(function () {shieldTimer()}, 1000);
         
         var css = function() {/*
             #minimap {
@@ -161,6 +163,14 @@ pc.script.create('minimap', function (context) {
                 this.canvas.classList.remove('active');
             }
         },
+
+        shieldTimer: function() {
+            //var d = new Date();
+            //document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+            console.log('shieldTimer');
+        }
+
+
         
         draw: function() {
             if (! this.canvas.classList.contains('active') || window.innerWidth < 640 || this.touch)
@@ -236,6 +246,11 @@ pc.script.create('minimap', function (context) {
                 console.log('play shieldspawn');
                 this.entity.audiosource.play("shieldspawn");
                 this.shieldShownLastTime = true;
+
+                // start the countdown
+                
+
+
             } 
             if (shieldDisplayed == false) {
                 this.shieldShownLastTime = false;
