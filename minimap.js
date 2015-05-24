@@ -81,11 +81,11 @@ pc.script.create('minimap', function (context) {
         //this.shieldTimer = 0; shieldTimer
         this.timer = setInterval(function () {
 
-            if (this.shieldCountdown == 0) {}
+            if (shieldCountdown == 0) {}
                 console.log('tick'); 
             }
             //console.log('shieldCountdown = ' + this.shieldCountdown); 
-            this.shieldCountdown--; 
+            shieldCountdown--; 
         }, 1000);
             
             this.level = [
