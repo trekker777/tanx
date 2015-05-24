@@ -168,7 +168,7 @@ pc.script.create('minimap', function (context) {
             //var d = new Date();
             //document.getElementById("demo").innerHTML = d.toLocaleTimeString();
             console.log('shieldTimer');
-        }
+        },
 
 
         
