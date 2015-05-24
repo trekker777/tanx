@@ -59,6 +59,8 @@ pc.script.create('minimap', function (context) {
         document.querySelector('head').appendChild(style);
     };
 
+    var shieldCountdown = 0;
+
     Minimap.prototype = {
         prepareCanvas: function() {
             var canvas = document.createElement('canvas');
@@ -76,7 +78,7 @@ pc.script.create('minimap', function (context) {
             this.client = context.root.getChildren()[0].script.client;
             this.teams = context.root.getChildren()[0].script.teams;
 
-            this.shieldCountdown = 0;
+            //this.shieldCountdown = 0;
             //this.shieldShownLastTime = false;
         //this.shieldTimer = 0; shieldTimer
         this.timer = setInterval(function () {
