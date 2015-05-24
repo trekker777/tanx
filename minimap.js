@@ -84,7 +84,7 @@ pc.script.create('minimap', function (context) {
             if (this.shieldCountdown == 0) {}
                 console.log('tick'); 
             }
-            console.log('shieldCountdown = ' + this.shieldCountdown); 
+            //console.log('shieldCountdown = ' + this.shieldCountdown); 
             this.shieldCountdown--; 
         }, 1000);
             
