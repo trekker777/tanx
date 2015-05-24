@@ -80,12 +80,12 @@ pc.script.create('minimap', function (context) {
             //this.shieldShownLastTime = false;
         //this.shieldTimer = 0; shieldTimer
         this.timer = setInterval(function () {
-            
-            if (shieldCountdown == 0) {}
+
+            if (this.shieldCountdown == 0) {}
                 console.log('tick'); 
             }
-            console.log('shieldCountdown = ' + shieldCountdown); 
-            shieldCountdown--; 
+            console.log('shieldCountdown = ' + this.shieldCountdown); 
+            this.shieldCountdown--; 
         }, 1000);
             
             this.level = [
