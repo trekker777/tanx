@@ -78,8 +78,8 @@ pc.script.create('minimap', function (context) {
 
             this.shieldCountdown = 0;
             //this.shieldShownLastTime = false;
-        //this.shieldTimer = 0;
-        this.timer = setInterval(function () {shieldTimer()}, 1000);
+        //this.shieldTimer = 0; shieldTimer
+        this.timer = setInterval(function () {console.log('test')}, 1000);
             
             this.level = [
                 [ 13.5, 2, 1, 4 ],
