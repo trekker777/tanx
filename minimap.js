@@ -83,14 +83,14 @@ pc.script.create('minimap', function (context) {
             //this.shieldCountdown = 0;
             //this.shieldShownLastTime = false;
         //this.shieldTimer = 0; shieldTimer
-        this.timer = setInterval(function () {
+/*        this.timer = setInterval(function () {
 
             if (shieldCountdown == 0) {}
                 console.log('tick'); 
             }
             //console.log('shieldCountdown = ' + this.shieldCountdown); 
             shieldCountdown--; 
-        }, 1000);
+        }, 1000);*/
             
             this.level = [
                 [ 13.5, 2, 1, 4 ],
