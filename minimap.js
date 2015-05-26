@@ -62,7 +62,7 @@ pc.script.create('minimap', function (context) {
 
     Minimap.prototype = {
 
-        var shieldCountdown = 0;
+        //var shieldCountdown = 0;
 
         prepareCanvas: function() {
             var canvas = document.createElement('canvas');
